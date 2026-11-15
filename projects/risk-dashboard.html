@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real-Time Risk Dashboard | Yash Singh Rawat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+<body>
+
+  <nav class="project-nav">
+    <a href="../index.html#projects" class="back-btn">← Back to Portfolio</a>
+    <span class="project-nav-logo">YSR Finance</span>
+  </nav>
+
+  <div class="project-hero">
+    <div class="hero-inner">
+      <div class="proj-category-badge">🛡️ Risk Analysis</div>
+      <h1>Real-Time Risk Dashboard<br/>for <span>NBFC Loan Portfolio</span></h1>
+      <p style="color:var(--text-light);max-width:680px;margin-top:14px;font-size:1rem;line-height:1.7;">
+        Designed and deployed a dynamic risk monitoring dashboard for a ₹200 Cr NBFC loan book. The system tracks NPA levels, concentration risk, credit scores, early warning indicators, and Value-at-Risk (VaR) in real time using Python and Power BI.
+      </p>
+      <div class="project-hero-meta">
+        <div class="meta-item">📅 <strong>Duration:</strong> 10 Weeks (2023)</div>
+        <div class="meta-item">👤 <strong>Role:</strong> Risk Analyst & Data Architect</div>
+        <div class="meta-item">🏢 <strong>Client:</strong> NBFC (Retail Lending)</div>
+        <div class="meta-item">🛠️ <strong>Tools:</strong> Python, Power BI, SQL, Excel</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-body">
+    <div class="proj-content">
+
+      <section>
+        <h2>🎯 Project Overview</h2>
+        <p>
+          An NBFC with ₹200 Cr in disbursed retail loans (personal loans, SME loans, and vehicle finance) was struggling with manual, Excel-based risk tracking that was outdated and error-prone. They needed a real-time, automated risk monitoring solution.
+        </p>
+        <p>
+          I designed and built a full-stack risk intelligence system: Python scripts for data processing and risk calculations, connected to a Power BI dashboard that refreshes every 4 hours with live loan data from their core banking system (CBS).
+        </p>
+        <div class="callout">
+          <p>💡 <strong>Key Result:</strong> NPA detection time reduced from <strong>7 days</strong> (manual) to <strong>4 hours</strong> (automated). 15 early-warning loan accounts flagged in the first month, avoiding an estimated <strong>₹3.2 Cr</strong> in potential NPAs.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>📊 Dashboard Impact Metrics</h2>
+        <div class="metric-grid">
+          <div class="metric-card">
+            <div class="m-icon">💰</div>
+            <span class="m-value">₹200 Cr</span>
+            <span class="m-label">Loan Book Monitored</span>
+          </div>
+          <div class="metric-card">
+            <div class="m-icon">⚡</div>
+            <span class="m-value">4 hrs</span>
+            <span class="m-label">Detection Time (was 7 days)</span>
+          </div>
+          <div class="metric-card">
+            <div class="m-icon">🚨</div>
+            <span class="m-value">15</span>
+            <span class="m-label">Early-Warning Accounts</span>
+          </div>
+          <div class="metric-card">
+            <div class="m-icon">💵</div>
+            <span class="m-value">₹3.2 Cr</span>
+            <span class="m-label">Potential NPA Avoided</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>🔧 System Architecture</h2>
+        <ol>
+          <li><strong>Data Ingestion (Python + SQL):</strong> Automated ETL pipeline pulls fresh loan data from the CBS every 4 hours. Handles data cleaning, deduplication, and schema normalization for 12,000+ active loan accounts.</li>
+          <li><strong>Risk Scoring Engine (Python):</strong> Calculates 8 risk metrics per account — DPD bucket, FOIR, LTV ratio, EMI bounce frequency, bureau score change, sector exposure, and collateral coverage ratio.</li>
+          <li><strong>VaR Calculation:</strong> Historical simulation and parametric VaR computed daily for the overall portfolio at 95% and 99% confidence levels. Stress testing against 2008 GFC and COVID-19 scenarios.</li>
+          <li><strong>Early Warning System (EWS):</strong> Rule-based flags + ML anomaly detection (Isolation Forest) to identify deteriorating accounts 30–60 days before formal DPD classification.</li>
+          <li><strong>Power BI Dashboard:</strong> Interactive dashboards with drill-down by product, geography, vintage, and risk band. Executive summary, analyst drill-down, and collection team views.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>📋 Portfolio Risk Breakdown</h2>
+        <table class="proj-table">
+          <thead>
+            <tr>
+              <th>Loan Segment</th>
+              <th>Book Size</th>
+              <th>NPA %</th>
+              <th>30-DPD %</th>
+              <th>VaR (99%, 1Y)</th>
+              <th>Risk Rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Personal Loans</strong></td>
+              <td>₹80 Cr</td>
+              <td class="td-neg">4.2%</td>
+              <td class="td-neg">8.1%</td>
+              <td>₹5.2 Cr</td>
+              <td><span class="td-neg">HIGH</span></td>
+            </tr>
+            <tr>
+              <td><strong>SME Loans</strong></td>
+              <td>₹75 Cr</td>
+              <td class="td-neutral">2.8%</td>
+              <td class="td-neutral">5.4%</td>
+              <td>₹3.8 Cr</td>
+              <td><span class="td-neutral">MEDIUM</span></td>
+            </tr>
+            <tr>
+              <td><strong>Vehicle Finance</strong></td>
+              <td>₹45 Cr</td>
+              <td class="td-pos">1.9%</td>
+              <td class="td-pos">3.2%</td>
+              <td>₹1.9 Cr</td>
+              <td><span class="td-pos">LOW</span></td>
+            </tr>
+            <tr style="background:rgba(0,212,170,0.04);">
+              <td><strong>Total Portfolio</strong></td>
+              <td><strong>₹200 Cr</strong></td>
+              <td class="td-neutral"><strong>3.1%</strong></td>
+              <td class="td-neutral"><strong>5.9%</strong></td>
+              <td><strong>₹10.9 Cr</strong></td>
+              <td><span class="td-neutral"><strong>MEDIUM</strong></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>📉 NPA Trend Before vs After Dashboard</h2>
+        <div class="chart-placeholder">
+          <div class="chart-title">NPA Detection Lag – Before vs After (Days)</div>
+          <div class="chart-bar-group">
+            <div class="chart-bar bar-alt" style="height:100%;">
+              <span class="bar-value">7 days</span>
+              <span class="bar-label">Before (Manual)</span>
+            </div>
+            <div class="chart-bar" style="height:24%;">
+              <span class="bar-value">4 hrs</span>
+              <span class="bar-label">After (Automated)</span>
+            </div>
+            <div class="chart-bar bar-alt" style="height:85%;">
+              <span class="bar-value">₹8.4 Cr</span>
+              <span class="bar-label">NPA Pre-Dashboard</span>
+            </div>
+            <div class="chart-bar" style="height:52%;">
+              <span class="bar-value">₹5.2 Cr</span>
+              <span class="bar-label">NPA Post-Dashboard</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>🔑 Key Risk Findings</h2>
+        <ul>
+          <li><strong>Personal Loan Segment:</strong> Highest NPA at 4.2%. Root cause: high FOIR (>55%) borrowers and bureau score below 680 at origination. Recommended stricter underwriting criteria.</li>
+          <li><strong>Geographic Concentration:</strong> 38% of the book concentrated in 2 districts — flagged as concentration risk; recommended cap of 25% per district.</li>
+          <li><strong>Vintage Analysis:</strong> Loans disbursed in Q3 2021 showing 2x higher 90-DPD rates — correlated with a collection gap during COVID recovery period.</li>
+          <li><strong>EWS Accuracy:</strong> Early warning model identified 80% of eventual NPA accounts 45 days in advance, giving the collection team sufficient lead time.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>🛠️ Tools & Technologies</h2>
+        <div class="tech-tags">
+          <span class="tech-tag">Python (pandas, scikit-learn)</span>
+          <span class="tech-tag">SQL (PostgreSQL)</span>
+          <span class="tech-tag">Power BI</span>
+          <span class="tech-tag">VaR (Historical + Parametric)</span>
+          <span class="tech-tag">Isolation Forest</span>
+          <span class="tech-tag">Excel</span>
+          <span class="tech-tag">ETL Pipeline</span>
+          <span class="tech-tag">RBI IRACP Norms</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>✅ Outcomes</h2>
+        <p>
+          The dashboard is now a core operational tool for the NBFC's credit and collection teams. Key outcomes:
+        </p>
+        <ul>
+          <li>NPA ratio reduced from 4.8% to 3.1% over 12 months post-deployment</li>
+          <li>Early warning system saved approximately ₹3.2 Cr in potential write-offs</li>
+          <li>Regulatory reporting (RBI IRACP) time cut from 3 days to 4 hours</li>
+          <li>Collection efficiency improved by 22% due to timely flagging of at-risk accounts</li>
+        </ul>
+        <div class="callout gold">
+          <p>📌 NBFC's board approved expansion of the dashboard framework to cover their newly launched MSME lending vertical in 2024.</p>
+        </div>
+      </section>
+
+    </div>
+
+    <aside class="proj-sidebar">
+      <div class="sidebar-card">
+        <h4>Project Details</h4>
+        <div class="sidebar-item"><span class="si-label">Type</span><span class="si-value">Risk Analysis</span></div>
+        <div class="sidebar-item"><span class="si-label">Client</span><span class="si-value">NBFC (Retail Lending)</span></div>
+        <div class="sidebar-item"><span class="si-label">Book Size</span><span class="si-value">₹200 Cr</span></div>
+        <div class="sidebar-item"><span class="si-label">Duration</span><span class="si-value">10 Weeks</span></div>
+        <div class="sidebar-item"><span class="si-label">NPA Reduction</span><span class="si-value" style="color:var(--accent)">4.8% → 3.1%</span></div>
+        <div class="sidebar-item"><span class="si-label">NPA Avoided</span><span class="si-value" style="color:var(--accent)">₹3.2 Cr</span></div>
+        <div class="sidebar-item"><span class="si-label">Detection Speed</span><span class="si-value" style="color:var(--accent)">7 days → 4 hrs</span></div>
+      </div>
+
+      <a href="../index.html#contact" class="sidebar-cta">💬 Build a Risk Dashboard</a>
+
+      <div class="sidebar-card">
+        <h4>Related Projects</h4>
+        <a href="dcf-lbo-model.html" class="related-project">
+          <div class="rp-icon">🏗️</div>
+          <span class="rp-title">3-Statement & LBO Model</span>
+        </a>
+        <a href="market-prediction.html" class="related-project">
+          <div class="rp-icon">🤖</div>
+          <span class="rp-title">ML-Driven Nifty 50 Prediction</span>
+        </a>
+        <a href="portfolio-optimization.html" class="related-project">
+          <div class="rp-icon">💼</div>
+          <span class="rp-title">HNI Portfolio Optimization</span>
+        </a>
+      </div>
+    </aside>
+  </div>
+
+</body>
+</html>

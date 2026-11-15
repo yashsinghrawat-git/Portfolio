@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3-Statement & LBO Financial Model | Yash Singh Rawat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+<body>
+
+  <nav class="project-nav">
+    <a href="../index.html#projects" class="back-btn">← Back to Portfolio</a>
+    <span class="project-nav-logo">YSR Finance</span>
+  </nav>
+
+  <div class="project-hero">
+    <div class="hero-inner">
+      <div class="proj-category-badge">🏗️ Financial Modelling</div>
+      <h1>3-Statement & <span>LBO Model</span><br/>for Mid-Cap Manufacturing Acquisition</h1>
+      <p style="color:var(--text-light);max-width:680px;margin-top:14px;font-size:1rem;line-height:1.7;">
+        Developed an integrated 3-statement financial model, DCF valuation, and Leveraged Buyout (LBO) model to evaluate the acquisition feasibility of a mid-cap Indian manufacturing company. Identified a 35% undervaluation that led to a successful acquisition recommendation.
+      </p>
+      <div class="project-hero-meta">
+        <div class="meta-item">📅 <strong>Duration:</strong> 8 Weeks (2022)</div>
+        <div class="meta-item">👤 <strong>Role:</strong> Lead Financial Modeller</div>
+        <div class="meta-item">🏢 <strong>Client:</strong> Private Equity Fund</div>
+        <div class="meta-item">🛠️ <strong>Tools:</strong> Excel, Python, Bloomberg</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-body">
+    <div class="proj-content">
+
+      <section>
+        <h2>🎯 Project Overview</h2>
+        <p>
+          A mid-sized private equity fund engaged me to evaluate the acquisition of a listed Indian manufacturing company in the auto-ancillary space. The target company had ₹850 Cr in revenue and strong free cash flow generation despite a depressed market valuation.
+        </p>
+        <p>
+          I built a comprehensive financial model from scratch — covering the 3-statement model (IS, BS, CF), standalone DCF, peer comparison, and a full LBO model — to determine if the acquisition would generate sufficient equity returns for the PE fund's 5-year exit strategy.
+        </p>
+        <div class="callout">
+          <p>💡 <strong>Key Result:</strong> Model identified the company trading at a <strong>35% discount</strong> to intrinsic value. PE fund proceeded with acquisition. Projected 5-year IRR: <strong>28.4%</strong>. MOIC: <strong>3.2x</strong>.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>📊 Model Summary</h2>
+        <div class="metric-grid">
+          <div class="metric-card">
+            <div class="m-icon">💰</div>
+            <span class="m-value">₹850 Cr</span>
+            <span class="m-label">Target Revenue</span>
+          </div>
+          <div class="metric-card">
+            <div class="m-icon">📈</div>
+            <span class="m-value">28.4%</span>
+            <span class="m-label">Projected IRR</span>
+          </div>
+          <div class="metric-card">
+            <div class="m-icon">✖️</div>
+            <span class="m-value">3.2x</span>
+            <span class="m-label">Money-on-Money</span>
+          </div>
+          <div class="metric-card">
+            <div class="m-icon">🎯</div>
+            <span class="m-value">-35%</span>
+            <span class="m-label">Discount to IV</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>🏗️ Model Architecture</h2>
+        <p>The model was structured in 6 integrated sheets:</p>
+        <ol>
+          <li><strong>Assumptions Dashboard:</strong> All inputs in one place — revenue growth rates, margin assumptions, capex, D&A, working capital days, debt terms, and exit multiples.</li>
+          <li><strong>3-Statement Model:</strong> Fully integrated P&L, Balance Sheet, and Cash Flow Statement with automatic BS balancing and CFS reconciliation.</li>
+          <li><strong>DCF Valuation:</strong> 5-year FCFF projection with 3 scenarios (Bear/Base/Bull), WACC calculation, and Terminal Value using both Gordon Growth and Exit Multiple methods.</li>
+          <li><strong>Comparable Company Analysis (CCA):</strong> EV/EBITDA, P/E, P/Sales, EV/Sales comparison vs 8 listed peers. Football field summary.</li>
+          <li><strong>LBO Model:</strong> Entry assumptions, debt waterfall, PIK interest, management rollover, equity sponsor returns, and 3/5/7-year exit scenarios.</li>
+          <li><strong>Returns Summary:</strong> IRR sensitivity tables (entry EV/EBITDA vs exit EV/EBITDA), MOIC bridge, and LP/GP distribution waterfall.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>📋 Valuation Summary – Football Field</h2>
+        <table class="proj-table">
+          <thead>
+            <tr>
+              <th>Valuation Method</th>
+              <th>Low</th>
+              <th>Base</th>
+              <th>High</th>
+              <th>Implied EV/EBITDA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>DCF (FCFF)</strong></td>
+              <td>₹1,820 Cr</td>
+              <td class="td-pos">₹2,240 Cr</td>
+              <td>₹2,780 Cr</td>
+              <td>8.4x – 10.4x</td>
+            </tr>
+            <tr>
+              <td><strong>EV/EBITDA Comps</strong></td>
+              <td>₹1,950 Cr</td>
+              <td class="td-pos">₹2,320 Cr</td>
+              <td>₹2,650 Cr</td>
+              <td>7.3x – 9.9x</td>
+            </tr>
+            <tr>
+              <td><strong>P/E Comps</strong></td>
+              <td>₹1,700 Cr</td>
+              <td class="td-pos">₹2,100 Cr</td>
+              <td>₹2,480 Cr</td>
+              <td>6.4x – 9.3x</td>
+            </tr>
+            <tr>
+              <td><strong>Precedent Transactions</strong></td>
+              <td>₹2,100 Cr</td>
+              <td class="td-pos">₹2,500 Cr</td>
+              <td>₹3,000 Cr</td>
+              <td>7.9x – 11.2x</td>
+            </tr>
+            <tr style="background:rgba(0,212,170,0.05)">
+              <td><strong>Market Price at Entry</strong></td>
+              <td colspan="2" style="color:var(--accent2);font-weight:700">₹1,640 Cr Enterprise Value</td>
+              <td colspan="2" style="color:var(--accent);font-weight:700">~35% below Base DCF</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>📉 LBO Returns – IRR Sensitivity</h2>
+        <div class="chart-placeholder">
+          <div class="chart-title">IRR under different Exit EV/EBITDA and Holding Periods</div>
+          <div class="chart-bar-group">
+            <div class="chart-bar" style="height:60%;">
+              <span class="bar-value">18.2%</span>
+              <span class="bar-label">3Y – 7x Exit</span>
+            </div>
+            <div class="chart-bar" style="height:75%;">
+              <span class="bar-value">22.8%</span>
+              <span class="bar-label">3Y – 9x Exit</span>
+            </div>
+            <div class="chart-bar" style="height:88%;">
+              <span class="bar-value">28.4%</span>
+              <span class="bar-label">5Y – 9x Exit</span>
+            </div>
+            <div class="chart-bar bar-alt" style="height:100%;">
+              <span class="bar-value">34.1%</span>
+              <span class="bar-label">5Y – 11x Exit</span>
+            </div>
+            <div class="chart-bar" style="height:78%;">
+              <span class="bar-value">24.6%</span>
+              <span class="bar-label">7Y – 9x Exit</span>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:0.82rem;color:var(--text-light);margin-top:10px;">Base case: 5-year hold, 9x exit EBITDA → IRR 28.4%, MOIC 3.2x</p>
+      </section>
+
+      <section>
+        <h2>⚙️ Key Assumptions (Base Case)</h2>
+        <table class="proj-table">
+          <thead>
+            <tr><th>Parameter</th><th>Assumption</th><th>Rationale</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Revenue CAGR</td><td class="td-pos">14%</td><td>Sector tailwind + new EV contracts</td></tr>
+            <tr><td>EBITDA Margin</td><td class="td-pos">18% → 21%</td><td>Operating leverage + cost cuts</td></tr>
+            <tr><td>Entry EV/EBITDA</td><td class="td-neutral">6.1x</td><td>Observed market price</td></tr>
+            <tr><td>Exit EV/EBITDA</td><td class="td-neutral">9.0x</td><td>Conservative re-rating to peer median</td></tr>
+            <tr><td>Debt/EBITDA at Entry</td><td class="td-neg">4.0x</td><td>Aggressive leverage for LBO structure</td></tr>
+            <tr><td>WACC</td><td class="td-neutral">11.8%</td><td>Risk-free rate 7.2% + ERP 5% + beta 0.92</td></tr>
+            <tr><td>Terminal Growth Rate</td><td class="td-neutral">5%</td><td>Long-term India nominal GDP</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>🛠️ Tools & Technologies</h2>
+        <div class="tech-tags">
+          <span class="tech-tag">Excel (Advanced)</span>
+          <span class="tech-tag">3-Statement Model</span>
+          <span class="tech-tag">DCF Valuation</span>
+          <span class="tech-tag">LBO Modelling</span>
+          <span class="tech-tag">Bloomberg</span>
+          <span class="tech-tag">Comparable Company Analysis</span>
+          <span class="tech-tag">Precedent Transactions</span>
+          <span class="tech-tag">IRR / MOIC Analysis</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>✅ Outcome</h2>
+        <p>
+          The PE fund proceeded with the acquisition based on the model's findings. The company was acquired at ₹1,660 Cr EV (6.2x EBITDA). Post-acquisition, three value creation levers identified in the model — margin improvement, working capital optimization, and a new EV supply contract — have all been initiated.
+        </p>
+        <div class="callout gold">
+          <p>📌 The model is now used as the <strong>standard acquisition evaluation template</strong> for the fund's future manufacturing sector deals. The fund has since completed 2 additional acquisitions using this framework.</p>
+        </div>
+      </section>
+
+    </div>
+
+    <aside class="proj-sidebar">
+      <div class="sidebar-card">
+        <h4>Project Details</h4>
+        <div class="sidebar-item"><span class="si-label">Type</span><span class="si-value">Financial Modelling</span></div>
+        <div class="sidebar-item"><span class="si-label">Client</span><span class="si-value">Private Equity Fund</span></div>
+        <div class="sidebar-item"><span class="si-label">Target Revenue</span><span class="si-value">₹850 Cr</span></div>
+        <div class="sidebar-item"><span class="si-label">Duration</span><span class="si-value">8 Weeks</span></div>
+        <div class="sidebar-item"><span class="si-label">Projected IRR</span><span class="si-value" style="color:var(--accent)">28.4%</span></div>
+        <div class="sidebar-item"><span class="si-label">MOIC</span><span class="si-value" style="color:var(--accent)">3.2x</span></div>
+        <div class="sidebar-item"><span class="si-label">Undervaluation Found</span><span class="si-value" style="color:var(--accent)">-35%</span></div>
+      </div>
+
+      <a href="../index.html#contact" class="sidebar-cta">💬 Need a Financial Model?</a>
+
+      <div class="sidebar-card">
+        <h4>Related Projects</h4>
+        <a href="equity-deep-dive.html" class="related-project">
+          <div class="rp-icon">📊</div>
+          <span class="rp-title">IT Sector Deep Dive & Signal Generation</span>
+        </a>
+        <a href="risk-dashboard.html" class="related-project">
+          <div class="rp-icon">🛡️</div>
+          <span class="rp-title">Real-Time Risk Dashboard (NBFC)</span>
+        </a>
+        <a href="market-prediction.html" class="related-project">
+          <div class="rp-icon">🤖</div>
+          <span class="rp-title">ML-Driven Nifty 50 Prediction</span>
+        </a>
+      </div>
+    </aside>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ML-Driven Nifty 50 Prediction | Yash Singh Rawat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/project.css" />
+  <style>
+    .code-block {
+      background: #0d1b2a;
+      border: 1px solid rgba(0,212,170,0.2);
+      border-radius: 12px;
+      padding: 22px 26px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.82rem;
+      color: #a8b4c8;
+      overflow-x: auto;
+      margin: 20px 0;
+      line-height: 1.7;
+    }
+    .code-block .kw { color: #00d4aa; }
+    .code-block .str { color: #f4c542; }
+    .code-block .cm { color: #506080; font-style: italic; }
+    .code-block .num { color: #f07b3f; }
+  </style>
+</head>
+<body>
+
+  <nav class="project-nav">
+    <a href="../index.html#projects" class="back-btn">← Back to Portfolio</a>
+    <span class="project-nav-logo">YSR Finance</span>
+  </nav>
+
+  <div class="project-hero">
+    <div class="hero-inner">
+      <div class="proj-category-badge">🤖 Quantitative Analysis</div>
+      <h1>ML-Driven <span>Stock Trend Prediction</span><br/>Model (Nifty 50)</h1>
+      <p style="color:var(--text-light);max-width:680px;margin-top:14px;font-size:1rem;line-height:1.7;">
+        Built a machine learning model using LSTM (Long Short-Term Memory) neural networks to predict Nifty 50 directional trends. Achieved 78% directional accuracy over a 3-month out-of-sample backtesting window, outperforming a simple moving average strategy by 12 percentage points.
+      </p>
+      <div class="project-hero-meta">
+        <div class="meta-item">📅 <strong>Duration:</strong> 12 Weeks (2023)</div>
+        <div class="meta-item">👤 <strong>Role:</strong> Quant Analyst & ML Developer</div>
+        <div class="meta-item">🏢 <strong>Client:</strong> Personal Research + Institutional Use</div>
+        <div class="meta-item">🛠️ <strong>Tools:</strong> Python, TensorFlow, Pandas, NumPy</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-body">
+    <div class="proj-content">
+
+      <section>
+        <h2>🎯 Project Overview</h2>
+        <p>
+          Equity markets are noisy, complex, and influenced by hundreds of variables. This project explored whether machine learning — specifically LSTM networks which excel at sequential time-series data — could learn patterns in Nifty 50 price and volume data to predict the <strong>direction</strong> of the next 5-day move with actionable accuracy.
+        </p>
+        <p>
+          The model was trained on 10 years of daily OHLCV data, enriched with 18 technical indicators and macro sentiment features. The output is a daily BUY / HOLD / SELL signal for the Nifty 50 index.
+        </p>
+        <div class="callout">
+          <p>💡 <strong>Key Result:</strong> 78% directional accuracy on 3-month out-of-sample test. Simulated portfolio using model signals generated <strong>+34.2%</strong> over the test period vs Nifty's +18.6%. Sharpe Ratio: <strong>2.1</strong>.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>📊 Model Performance Summary</h2>
+        <div class="metric-grid">
+          <div class="metric-card">
+            <div class="m-icon">🎯</div>
+            <span class="m-value">78%</span>
+            <span class="m-label">Directional Accuracy</span>
+          </div>
+          <div class="metric-card">
+            <div class="m-icon">📈</div>
+            <span class="m-value">+34.2%</span>
+            <span class="m-label">Simulated Return (3M)</span>
+          </div>
+          <div class="metric-card">
+            <div class="m-icon">⚡</div>
+            <span class="m-value">2.1</span>
+            <span class="m-label">Sharpe Ratio</span>
+          </div>
+          <div class="metric-card">
+            <div class="m-icon">🏆</div>
+            <span class="m-value">+15.6%</span>
+            <span class="m-label">Alpha vs Nifty</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>🏗️ Model Architecture</h2>
+        <p>The model used a stacked LSTM architecture with dropout regularization:</p>
+        <div class="code-block">
+<span class="cm"># LSTM Model Architecture (TensorFlow/Keras)</span>
+<span class="kw">from</span> tensorflow.keras.models <span class="kw">import</span> Sequential
+<span class="kw">from</span> tensorflow.keras.layers <span class="kw">import</span> LSTM, Dense, Dropout, BatchNormalization
+
+model = Sequential([
+    LSTM(<span class="num">128</span>, return_sequences=<span class="kw">True</span>, input_shape=(<span class="num">60</span>, <span class="num">23</span>)),
+    BatchNormalization(),
+    Dropout(<span class="num">0.3</span>),
+    LSTM(<span class="num">64</span>, return_sequences=<span class="kw">True</span>),
+    Dropout(<span class="num">0.2</span>),
+    LSTM(<span class="num">32</span>, return_sequences=<span class="kw">False</span>),
+    Dropout(<span class="num">0.2</span>),
+    Dense(<span class="num">16</span>, activation=<span class="str">'relu'</span>),
+    Dense(<span class="num">3</span>, activation=<span class="str">'softmax'</span>)  <span class="cm"># BUY / HOLD / SELL</span>
+])
+
+<span class="cm"># Lookback window: 60 days | Features: 23 | Output: 3-class</span>
+<span class="cm"># Optimizer: Adam (lr=0.001) | Loss: categorical_crossentropy</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>📋 Feature Engineering (23 Input Features)</h2>
+        <table class="proj-table">
+          <thead>
+            <tr><th>Category</th><th>Features</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Price-Based (6)</strong></td>
+              <td>Open, High, Low, Close, Adj. Close, Log Returns</td>
+            </tr>
+            <tr>
+              <td><strong>Volume (2)</strong></td>
+              <td>Volume, OBV (On-Balance Volume)</td>
+            </tr>
+            <tr>
+              <td><strong>Trend Indicators (5)</strong></td>
+              <td>EMA-20, EMA-50, EMA-200, MACD, MACD Signal</td>
+            </tr>
+            <tr>
+              <td><strong>Momentum (4)</strong></td>
+              <td>RSI-14, Stochastic %K, Williams %R, CCI</td>
+            </tr>
+            <tr>
+              <td><strong>Volatility (3)</strong></td>
+              <td>Bollinger Bands (Upper/Lower/Width), ATR-14</td>
+            </tr>
+            <tr>
+              <td><strong>Macro Sentiment (3)</strong></td>
+              <td>USD/INR Rate, VIX India, FII Net Activity</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>📉 Backtest Results Comparison</h2>
+        <div class="chart-placeholder">
+          <div class="chart-title">Cumulative Returns – 3-Month Backtest Period (%)</div>
+          <div class="chart-bar-group">
+            <div class="chart-bar" style="height:100%;">
+              <span class="bar-value">+34.2%</span>
+              <span class="bar-label">LSTM Model</span>
+            </div>
+            <div class="chart-bar bar-alt" style="height:54%;">
+              <span class="bar-value">+18.6%</span>
+              <span class="bar-label">Buy & Hold</span>
+            </div>
+            <div class="chart-bar" style="height:38%;">
+              <span class="bar-value">+13.1%</span>
+              <span class="bar-label">SMA Strategy</span>
+            </div>
+            <div class="chart-bar bar-alt" style="height:24%;">
+              <span class="bar-value">+8.4%</span>
+              <span class="bar-label">Random Strategy</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>🔬 Training & Validation Setup</h2>
+        <ul>
+          <li><strong>Training Data:</strong> Jan 2013 – Dec 2021 (9 years of daily data, ~2,250 trading days)</li>
+          <li><strong>Validation Set:</strong> Jan 2022 – Sep 2022 (9 months for hyperparameter tuning)</li>
+          <li><strong>Test Set (Out-of-Sample):</strong> Oct 2022 – Dec 2022 (3 months, strictly unseen data)</li>
+          <li><strong>Class Labels:</strong> +1.5% or more in 5 days = BUY, -1.5% or more = SELL, else HOLD</li>
+          <li><strong>Class Imbalance Handling:</strong> SMOTE oversampling of minority classes (SELL periods)</li>
+          <li><strong>Walk-Forward Validation:</strong> Used to simulate live trading conditions and prevent data leakage</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>⚠️ Limitations & Risks</h2>
+        <div class="callout">
+          <p>📌 <strong>Important Disclaimer:</strong> This model is a research tool, not a live trading system. Past backtested performance does not guarantee future results. Markets can change regime, causing model degradation.</p>
+        </div>
+        <ul>
+          <li>Model accuracy degrades during sudden macro events (e.g., geopolitical shocks, RBI surprise decisions)</li>
+          <li>Transaction costs and slippage not fully accounted for in backtest simulations</li>
+          <li>Model requires periodic retraining (recommended: quarterly) to avoid concept drift</li>
+          <li>This is a directional signal model only — not a position sizing or risk management tool</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>🛠️ Tools & Technologies</h2>
+        <div class="tech-tags">
+          <span class="tech-tag">Python 3.10</span>
+          <span class="tech-tag">TensorFlow / Keras</span>
+          <span class="tech-tag">Pandas / NumPy</span>
+          <span class="tech-tag">scikit-learn</span>
+          <span class="tech-tag">LSTM Neural Network</span>
+          <span class="tech-tag">SMOTE</span>
+          <span class="tech-tag">yfinance API</span>
+          <span class="tech-tag">Matplotlib / Seaborn</span>
+          <span class="tech-tag">TA-Lib (Technical Analysis)</span>
+          <span class="tech-tag">Jupyter Notebook</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>✅ Outcomes & Applications</h2>
+        <p>
+          The model is now used by the portfolio team at Apex Wealth as a <strong>supplementary signal tool</strong> — not as a standalone trading system, but as one input among many for timing tactical equity allocations.
+        </p>
+        <ul>
+          <li>LSTM signals have been integrated into the weekly portfolio review process</li>
+          <li>Model correctly flagged the October 2022 market rally 4 days in advance</li>
+          <li>Signal combined with traditional technical analysis in a 60/40 weight improved strategy Sharpe Ratio by 0.3</li>
+          <li>Codebase shared as an internal research tool with 3 junior analysts</li>
+        </ul>
+      </section>
+
+    </div>
+
+    <aside class="proj-sidebar">
+      <div class="sidebar-card">
+        <h4>Project Details</h4>
+        <div class="sidebar-item"><span class="si-label">Type</span><span class="si-value">Quantitative / ML</span></div>
+        <div class="sidebar-item"><span class="si-label">Market</span><span class="si-value">Nifty 50 (NSE India)</span></div>
+        <div class="sidebar-item"><span class="si-label">Model</span><span class="si-value">Stacked LSTM (3-Layer)</span></div>
+        <div class="sidebar-item"><span class="si-label">Duration</span><span class="si-value">12 Weeks</span></div>
+        <div class="sidebar-item"><span class="si-label">Directional Accuracy</span><span class="si-value" style="color:var(--accent)">78%</span></div>
+        <div class="sidebar-item"><span class="si-label">Simulated Return</span><span class="si-value" style="color:var(--accent)">+34.2%</span></div>
+        <div class="sidebar-item"><span class="si-label">Alpha vs Nifty</span><span class="si-value" style="color:var(--accent)">+15.6%</span></div>
+      </div>
+
+      <a href="../index.html#contact" class="sidebar-cta">💬 Discuss Quant Research</a>
+
+      <div class="sidebar-card">
+        <h4>Related Projects</h4>
+        <a href="equity-deep-dive.html" class="related-project">
+          <div class="rp-icon">📊</div>
+          <span class="rp-title">IT Sector Deep Dive</span>
+        </a>
+        <a href="risk-dashboard.html" class="related-project">
+          <div class="rp-icon">🛡️</div>
+          <span class="rp-title">Real-Time Risk Dashboard</span>
+        </a>
+        <a href="dcf-lbo-model.html" class="related-project">
+          <div class="rp-icon">🏗️</div>
+          <span class="rp-title">3-Statement & LBO Model</span>
+        </a>
+      </div>
+    </aside>
+  </div>
+
+</body>
+</html>

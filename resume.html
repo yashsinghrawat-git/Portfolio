@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Resume of Yash Singh Rawat — M.Com Finance Graduate | AML/KYC | IB Back Office Operations | Goldman Sachs Operations Simulation | CIBOP Certified." />
+  <title>Yash Singh Rawat — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent:   #0f4c81;
+      --accent2:  #1a73e8;
+      --dark:     #0f172a;
+      --mid:      #334155;
+      --muted:    #64748b;
+      --light:    #f1f5f9;
+      --border:   #e2e8f0;
+      --white:    #ffffff;
+      --green:    #00b894;
+      --teal:     #00d4aa;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: var(--dark);
+      background: #dde3ec;
+    }
+
+    /* ─── Action Bar ─────────────────────────── */
+    .action-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--dark);
+      padding: 13px 36px;
+      gap: 16px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+    .action-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .btn-back {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.82rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.2s;
+      min-height: 36px;
+    }
+    .btn-back:hover { color: #fff; }
+    .action-title {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.85rem;
+    }
+    .action-title strong { color: #fff; }
+    .btn-dl {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #00d4aa, #00b894);
+      color: #0a0a0a;
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 10px 26px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(0,212,170,0.35);
+      white-space: nowrap;
+      min-height: 44px;
+    }
+    .btn-dl:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,212,170,0.5);
+    }
+
+    /* ─── Paper ──────────────────────────────── */
+    .paper {
+      max-width: 860px;
+      margin: 36px auto 60px;
+      background: var(--white);
+      border-radius: 6px;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.14);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+    }
+
+    /* ─── Sidebar ────────────────────────────── */
+    .sidebar {
+      background: var(--dark);
+      padding: 40px 24px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .sidebar-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+      color: #fff;
+    }
+    .sidebar-role {
+      margin-top: 6px;
+      font-size: 0.72rem;
+      color: var(--teal);
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    .sidebar-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .sidebar-section-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 10px;
+    }
+
+    /* Contact */
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.74rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.4;
+    }
+    .contact-list .ci {
+      margin-top: 1px;
+      flex-shrink: 0;
+      width: 14px;
+      height: 14px;
+      opacity: 0.7;
+    }
+    .contact-list a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .contact-list a:hover { color: var(--teal); }
+
+    /* Skills pills */
+    .skill-pill-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .skill-pill {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.71rem;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    /* Areas of interest */
+    .interest-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .interest-item {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.7);
+      padding-left: 12px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .interest-item::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-size: 0.65rem;
+      top: 2px;
+    }
+
+    /* Languages */
+    .lang-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .lang-name {
+      font-size: 0.74rem;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+    }
+    .lang-level {
+      font-size: 0.68rem;
+      color: var(--teal);
+      font-weight: 600;
+    }
+
+    /* ─── Main Content ───────────────────────── */
+    .main {
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    .main-header {
+      border-bottom: 2.5px solid var(--accent);
+      padding-bottom: 14px;
+    }
+    .main-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+    .main-name span { color: var(--accent2); }
+    .main-tagline {
+      margin-top: 5px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    /* Section headings */
+    .sec-heading {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .sec-heading-bar {
+      width: 4px;
+      height: 18px;
+      background: linear-gradient(180deg, var(--teal), var(--accent2));
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .sec-heading-text {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    /* Summary */
+    .summary-para {
+      font-size: 0.84rem;
+      color: var(--mid);
+      line-height: 1.8;
+    }
+
+    /* Entry */
+    .entry {
+      margin-bottom: 16px;
+      padding-left: 14px;
+      border-left: 2px solid var(--border);
+      position: relative;
+    }
+    .entry::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent2);
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 1px var(--accent2);
+    }
+    .entry:last-child { margin-bottom: 0; }
+
+    .entry-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .entry-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--dark);
+    }
+    .entry-badge {
+      background: var(--light);
+      color: var(--accent);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+      border: 1px solid var(--border);
+    }
+    .entry-badge.green {
+      background: #e8faf5;
+      color: #00805e;
+      border-color: #b2e8d8;
+    }
+    .entry-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .entry-desc {
+      font-size: 0.82rem;
+      color: var(--mid);
+      margin-top: 6px;
+      line-height: 1.75;
+    }
+    .entry-desc ul {
+      margin-top: 5px;
+      padding-left: 16px;
+    }
+    .entry-desc ul li {
+      margin-bottom: 3px;
+      list-style: disc;
+    }
+
+    /* Skills rows */
+    .skills-row {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .skill-line {
+      font-size: 0.83rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+    .skill-line strong {
+      color: var(--dark);
+      font-weight: 600;
+    }
+
+    /* Cert cards */
+    .cert-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .cert-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 14px;
+      background: var(--light);
+      border-radius: 6px;
+      border-left: 3px solid var(--teal);
+    }
+    .cert-icon-box {
+      width: 34px;
+      height: 34px;
+      background: var(--teal);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cert-icon-box svg { width: 18px; height: 18px; }
+    .cert-icon-box.gold { background: #f4c542; }
+    .cert-icon-box.blue { background: var(--accent2); }
+    .cert-title {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+    .cert-org {
+      font-size: 0.76rem;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+
+    /* ─── Print ──────────────────────────────── */
+    @media print {
+      body { background: #fff; font-size: 12px; }
+      .action-bar { display: none !important; }
+      .paper {
+        box-shadow: none;
+        margin: 0;
+        border-radius: 0;
+        max-width: 100%;
+        grid-template-columns: 200px 1fr;
+      }
+      .sidebar { padding: 28px 18px; gap: 20px; }
+      .main { padding: 28px 26px; gap: 20px; }
+      .entry { page-break-inside: avoid; }
+      .cert-item { page-break-inside: avoid; }
+    }
+
+    /* ─── Responsive ─────────────────────────── */
+    @media (max-width: 680px) {
+      .paper {
+        grid-template-columns: 1fr;
+        margin: 0;
+        border-radius: 0;
+      }
+      .sidebar { padding: 28px 20px; }
+      .main { padding: 28px 20px; }
+      .main-name { font-size: 1.5rem; }
+      .action-bar { padding: 12px 16px; }
+      .action-title { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Action Bar ──────────────────────────── -->
+  <div class="action-bar">
+    <div class="action-bar-left">
+      <a href="index.html" class="btn-back">← Portfolio</a>
+      <div class="action-title"><strong>Yash Singh Rawat</strong> &nbsp;·&nbsp; Resume</div>
+    </div>
+    <a href="Yash_Singh_Rawat_(12-11-26) (1) (1).pdf" class="btn-dl" download="Yash_Singh_Rawat_CV.pdf">
+      ⬇ &nbsp;Download CV
+    </a>
+  </div>
+
+  <!-- ── Resume Paper ─────────────────────────── -->
+  <div class="paper">
+
+    <!-- ── Sidebar ───────────────────────────── -->
+    <aside class="sidebar">
+
+      <div>
+        <div class="sidebar-name">Yash Singh<br/>Rawat</div>
+        <div class="sidebar-role">IB Operations · AML/KYC<br/>Trade Lifecycle · Corporate Action</div>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <!-- Contact -->
+      <div>
+        <div class="sidebar-section-label">Contact</div>
+        <ul class="contact-list">
+          <li>
+            <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            New Delhi, India
+          </li>
+          <li>
+            <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.32 19 19.45 19.45 0 0 1 5 12.68 19.79 19.79 0 0 1 2.12 4.16 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+916307019306">+91 6307019306</a>
+          </li>
+          <li>
+            <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:yashsingh2542@gmail.com">yashsingh2542@gmail.com</a>
+          </li>
+          <li>
+            <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="2" stroke-linecap="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <a href="https://www.linkedin.com/in/yashsinghrawat" target="_blank" rel="noopener noreferrer">linkedin.com/in/yashsinghrawat</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <!-- Education -->
+      <div>
+        <div class="sidebar-section-label">Education</div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div>
+            <div style="font-size:0.8rem;font-weight:700;color:#fff;line-height:1.3;">M.Com — Finance</div>
+            <div style="font-size:0.72rem;color:rgba(255,255,255,0.6);margin-top:2px;">Siddharth University, Kapilvastu</div>
+            <div style="font-size:0.72rem;color:#00d4aa;margin-top:2px;font-weight:600;">2026 · CGPA 7.2</div>
+          </div>
+          <div>
+            <div style="font-size:0.8rem;font-weight:700;color:#fff;line-height:1.3;">B.Com</div>
+            <div style="font-size:0.72rem;color:rgba(255,255,255,0.6);margin-top:2px;">University of Allahabad, Prayagraj</div>
+            <div style="font-size:0.72rem;color:#00d4aa;margin-top:2px;font-weight:600;">2022 · 88%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <!-- Areas of Interest -->
+      <div>
+        <div class="sidebar-section-label">Areas of Interest</div>
+        <div class="interest-list">
+          <div class="interest-item">AML / KYC</div>
+          <div class="interest-item">Trade Lifecycle</div>
+          <div class="interest-item">Trade Processing</div>
+          <div class="interest-item">Trade Settlements</div>
+          <div class="interest-item">Reconciliation</div>
+          <div class="interest-item">Clearing &amp; Custody</div>
+          <div class="interest-item">IB Back Office Operations</div>
+          <div class="interest-item">Corporate Actions</div>
+          <div class="interest-item">Financial Markets &amp; Products</div>
+        </div>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <!-- Languages -->
+      <div>
+        <div class="sidebar-section-label">Languages</div>
+        <div class="lang-list">
+          <div class="lang-item">
+            <span class="lang-name">English</span>
+            <span class="lang-level">Fluent</span>
+          </div>
+          <div class="lang-item">
+            <span class="lang-name">Hindi</span>
+            <span class="lang-level">Native</span>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ── Main ──────────────────────────────── -->
+    <main class="main">
+
+      <!-- Name Header -->
+      <div class="main-header">
+        <div class="main-name">Yash Singh <span>Rawat</span></div>
+        <div class="main-tagline">M.Com (Finance) Graduate &nbsp;·&nbsp; Investment Banking Back Office Operations &nbsp;·&nbsp; AML/KYC &nbsp;·&nbsp; Trade Lifecycle</div>
+      </div>
+
+      <!-- Professional Summary -->
+      <div class="section">
+        <div class="sec-heading">
+          <div class="sec-heading-bar"></div>
+          <div class="sec-heading-text">Professional Snapshot</div>
+        </div>
+        <p class="summary-para">
+          M.Com (Finance) graduate targeting Investment Banking Back Office Operations roles in trade processing, trade settlement, reconciliation, clearing and custody. Skilled in bank reconciliation, discrepancy resolution, financial accounting, Excel MIS reporting, and AML/KYC. Completed the Goldman Sachs Operations Job Simulation and hold the CIBOP certification from Imarticus Learning, Delhi. Accurate, detail-oriented, and comfortable working with ledgers, transaction data, and reporting deadlines.
+        </p>
+      </div>
+
+      <!-- Core Competencies -->
+      <div class="section">
+        <div class="sec-heading">
+          <div class="sec-heading-bar"></div>
+          <div class="sec-heading-text">Core Competencies</div>
+        </div>
+        <div class="skills-row">
+          <div class="skill-line"><strong>AML &amp; KYC:</strong> Anti-Money Laundering (AML), Know Your Customer (KYC), Customer Due Diligence (CDD), Enhanced Due Diligence (EDD), Politically Exposed Persons (PEP), Sanctions Screening (UN/OFAC), Transaction Monitoring, Customer Risk Assessment, STR Drafting</div>
+          <div class="skill-line"><strong>IB Operations:</strong> Trade Lifecycle, Trade Processing, Trade Settlement, Clearing and Custody, Trade Reconciliation, Back Office Operations, Corporate Actions</div>
+          <div class="skill-line"><strong>Financial Markets &amp; Products:</strong> Equity Shares, Debentures, Bonds, Mutual Funds, Derivatives (Futures, Options, Swaps), Capital Market Basics, Primary and Secondary Markets, Product Risk-Return Profiles</div>
+          <div class="skill-line"><strong>Tools &amp; Reporting:</strong> MS Excel (VLOOKUP, Pivot Tables, MIS), SQL (SELECT, JOIN, GROUP BY), Tally ERP, MS Word, MS PowerPoint</div>
+          <div class="skill-line"><strong>Professional Attributes:</strong> Attention to Detail, Analytical Thinking, Problem-Solving, Team Collaboration, Strong Written &amp; Verbal Communication (English)</div>
+        </div>
+      </div>
+
+      <!-- Projects & Virtual Experience -->
+      <div class="section">
+        <div class="sec-heading">
+          <div class="sec-heading-bar"></div>
+          <div class="sec-heading-text">Projects &amp; Virtual Experience</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-row">
+            <div class="entry-title">KYC/AML Customer Screening Project</div>
+            <div class="entry-badge green">Excel · Self-Initiated</div>
+          </div>
+          <div class="entry-desc">
+            <ul>
+              <li>Conducted customer risk assessments and applied CDD/EDD based on individual risk levels.</li>
+              <li>Screened customers against UN/OFAC sanctions lists and PEP criteria, identifying true matches and false positives.</li>
+              <li>Identified suspicious transaction patterns and drafted sample Suspicious Transaction Reports (STRs) with proper audit documentation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-row">
+            <div class="entry-title">Operations Job Simulation — Goldman Sachs</div>
+            <div class="entry-badge green">Virtual Experience</div>
+          </div>
+          <div class="entry-desc">
+            <ul>
+              <li>Completed a virtual job simulation covering investment banking operations and back office workflows.</li>
+              <li>Gained practical exposure to trade lifecycle management, transaction processing, and operational procedures used in IB environments.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-row">
+            <div class="entry-title">Bank Reconciliation Exercise</div>
+            <div class="entry-badge">Academic</div>
+          </div>
+          <div class="entry-desc">Matched book balances against bank statements and traced discrepancies such as outstanding cheques and unrecorded entries to bring accounts into agreement.</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-row">
+            <div class="entry-title">MIS Reporting Project</div>
+            <div class="entry-badge">Academic</div>
+          </div>
+          <div class="entry-desc">Converted raw transaction data into structured MIS-style summary reports using MS Excel (VLOOKUP, Pivot Tables) for coursework-based financial analysis.</div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="section">
+        <div class="sec-heading">
+          <div class="sec-heading-bar"></div>
+          <div class="sec-heading-text">Certification Portfolio</div>
+        </div>
+        <div class="cert-list">
+
+          <div class="cert-item">
+            <div class="cert-icon-box gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round">
+                <circle cx="12" cy="8" r="6"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/>
+              </svg>
+            </div>
+            <div>
+              <div class="cert-title">CIBOP — Certified Investment Banking Operations Professional</div>
+              <div class="cert-org">Imarticus Learning, Delhi &nbsp;·&nbsp; IB Operations · Back Office · Trade Lifecycle</div>
+            </div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-icon-box blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
+                <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M9 7h6M9 11h4" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div>
+              <div class="cert-title">Operations Job Simulation</div>
+              <div class="cert-org">Goldman Sachs (Virtual Experience) &nbsp;·&nbsp; IB Operations · Back Office Workflows</div>
+            </div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round">
+                <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M9 7h6M9 11h4" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div>
+              <div class="cert-title">Data Analysis Using Excel</div>
+              <div class="cert-org">Great Learning &nbsp;·&nbsp; Excel Analytics &amp; MIS Reporting</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+
+  </div><!-- /.paper -->
+
+</body>
+</html>

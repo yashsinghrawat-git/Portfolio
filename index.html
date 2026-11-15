@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Yash Singh Rawat – M.Com (Finance) graduate seeking Investment Banking Back Office Operations. Skills in Trade Lifecycle, AML/KYC, Financial Markets, Excel, SQL, reconciliation." />
+  <meta name="keywords" content="Yash Singh Rawat, Investment Banking Operations, Back Office, Trade Settlement, Reconciliation, AML, KYC, Financial Markets, Excel, MIS, Finance Graduate, CIBOP" />
+  <meta property="og:title" content="Yash Singh Rawat | IB Operations, AML/KYC & Financial Markets" />
+  <meta property="og:description" content="M.Com Finance graduate skilled in Trade Lifecycle, AML/KYC, Financial Markets & Products, reconciliation, and Excel MIS reporting. Goldman Sachs Operations Simulation. Seeking IB Back Office Operations role." />
+  <meta property="og:type" content="website" />
+  <title>Yash Singh Rawat | IB Operations & AML/KYC</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #00d4aa, #f4c542);
+      z-index: 10001;
+      width: 0%;
+      transition: width 0.1s ease;
+    }
+
+    .nav-links a.active-nav {
+      color: #00d4aa;
+    }
+    .nav-links a.active-nav::after {
+      width: 100%;
+    }
+
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(0, 212, 170, 0.3), transparent);
+    }
+
+    /* Download CV button style (reusable) */
+    .btn-download-cv {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      background: linear-gradient(135deg, #00d4aa, #00b894);
+      color: #0a0a0a;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 20px rgba(0, 212, 170, 0.35);
+    }
+    .btn-download-cv:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0, 212, 170, 0.5);
+    }
+
+    /* Areas of interest tags */
+    .interest-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .interest-tag {
+      background: rgba(0, 212, 170, 0.1);
+      border: 1px solid rgba(0, 212, 170, 0.35);
+      color: #00d4aa;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    /* Training / project timeline tweaks */
+    .training-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 28px 30px;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+    .training-card:hover {
+      border-color: rgba(0, 212, 170, 0.4);
+      transform: translateY(-4px);
+    }
+    .training-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .training-card p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .training-card-icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+    .training-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    /* Floating CV bar */
+    .cv-float-bar {
+      background: linear-gradient(135deg, rgba(0,212,170,0.12), rgba(244,197,66,0.08));
+      border: 1px solid rgba(0,212,170,0.25);
+      border-radius: 16px;
+      padding: 32px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 60px;
+    }
+    .cv-float-bar-text h3 {
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+    .cv-float-bar-text p {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    /* ── 3D 360 Rotate Scene ─────────────────────── */
+    .rotate3d-scene {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      perspective: 900px;
+      cursor: grab;
+      position: relative;
+      z-index: 1;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .rotate3d-scene:active { cursor: grabbing; }
+
+    .rotate3d-obj {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      transform-style: preserve-3d;
+      transition: transform 0.08s linear;
+      overflow: hidden;
+      border: 4px solid rgba(0, 212, 170, 0.5);
+      box-shadow: 0 0 40px rgba(0, 212, 170, 0.2);
+      will-change: transform;
+    }
+
+    .rotate3d-obj img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 50%;
+      display: block;
+      pointer-events: none;
+      backface-visibility: hidden;
+    }
+
+    /* Hint badge */
+    .rotate3d-hint {
+      position: absolute;
+      bottom: -32px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 212, 170, 0.15);
+      border: 1px solid rgba(0, 212, 170, 0.35);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.72rem;
+      padding: 4px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    @media (max-width: 640px) {
+      .rotate3d-hint {
+        bottom: -26px;
+        font-size: 0.65rem;
+        padding: 3px 10px;
+      }
+      .about-rotate3d-hint {
+        font-size: 0.65rem;
+        padding: 3px 10px;
+      }
+    }
+    .rotate3d-hint.hidden { opacity: 0; }
+
+    /* Gmail social icon */
+    .social-link-gmail {
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+    .social-link-gmail svg {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+
+    .about-real-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+      border-radius: 16px;
+      transition: transform 0.5s ease;
+    }
+
+    .about-img-wrapper:hover .about-real-img {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Progress Bar -->
+  <div id="progress-bar"></div>
+
+  <!-- Page Loader -->
+  <div id="loader">
+    <div class="loader-content">
+      <div class="loader-logo">YSR</div>
+      <div class="loader-bar">
+        <div class="loader-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="menu-overlay" id="menu-overlay"></div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="close-menu" id="close-menu" aria-label="Close menu">✕</button>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#services">What I Offer</a></li>
+      <li><a href="#training">Training & Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav id="main-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Yash Singh Rawat home">YSR</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#services">What I Offer</a></li>
+        <li><a href="#training">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact" class="nav-cta">Contact Me</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ================================================
+       HERO SECTION
+  ================================================= -->
+  <section id="hero">
+    <div class="hero-container">
+      <!-- Left Content -->
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span class="dot"></span>
+          Open to Entry-Level Opportunities
+        </div>
+
+        <h1 class="hero-name">
+          Hi, I'm<br />
+          <span class="highlight">Yash Singh</span><br />
+          Rawat
+        </h1>
+
+        <p class="hero-title">
+          Aspiring <span class="typed-text">IB Back Office Analyst</span>
+        </p>
+
+        <p class="hero-description">
+          M.Com (Finance) graduate targeting IB Back Office Operations — skilled in Trade Lifecycle, AML/KYC, Financial Markets &amp; Products, bank reconciliation, and Excel MIS reporting. Completed the Goldman Sachs Operations Job Simulation.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#training" class="btn-primary">
+            <span>View Projects</span>
+            <span>→</span>
+          </a>
+          <a href="resume.html" class="btn-download-cv" target="_blank" rel="noopener noreferrer">
+            <span>⬇</span>
+            <span>Download CV</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">M.Com</span>
+            <span class="stat-label">Finance — 7.2 CGPA</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">B.Com</span>
+            <span class="stat-label">Commerce — 88%</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">2+</span>
+            <span class="stat-label">Projects & Simulations</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">CIBOP</span>
+            <span class="stat-label">Certified — Imarticus</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Visual -->
+      <div class="hero-visual">
+        <div class="profile-wrapper">
+          <div class="profile-ring"></div>
+          <div class="profile-ring-2"></div>
+          <!-- 3D 360 rotate scene -->
+          <div class="rotate3d-scene" id="rotate3d-scene" title="Drag to rotate">
+            <div class="rotate3d-obj" id="rotate3d-obj">
+              <img src="Confident South Asian Professional Portrait.png" alt="Yash Singh Rawat" class="profile-img" draggable="false" />
+            </div>
+            <div class="rotate3d-hint" id="rotate3d-hint">
+              <span>⟳ Drag to rotate</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating cards -->
+        <div class="float-card card-1">
+          <div class="fc-icon">🔍</div>
+          <div class="fc-value">AML / KYC</div>
+          <div class="fc-label">Compliance</div>
+        </div>
+        <div class="float-card card-2">
+          <div class="fc-icon">🔄</div>
+          <div class="fc-value">Reconciliation</div>
+          <div class="fc-label">Bank & Trade</div>
+        </div>
+        <div class="float-card card-3">
+          <div class="fc-icon">📋</div>
+          <div class="fc-value">MIS Reports</div>
+          <div class="fc-label">Excel & SQL</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ================================================
+       ABOUT SECTION
+  ================================================= -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Visual -->
+        <div class="about-visual reveal-left">
+          <div class="about-img-wrapper">
+              <img src="Confident Finance Professional in Trading Office.png" alt="Yash Singh Rawat" class="about-real-img" />
+          </div>
+          <div class="experience-badge">
+            <span class="exp-num">M.Com</span>
+            <span class="exp-text">Finance<br/>Graduate</span>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="about-content reveal-right">
+          <div class="section-tag">About Me</div>
+          <h2 class="section-title" style="text-align:left;margin-bottom:20px;">
+            Detail-Oriented. <span>Accuracy-Focused.</span> Ready to Contribute.
+          </h2>
+
+          <p class="about-intro">
+            I'm Yash Singh Rawat — an M.Com (Finance) graduate from Siddharth University. I'm targeting entry-level roles in Investment Banking Back Office Operations, with a strong focus on AML/KYC, trade processing, trade settlements, reconciliation, clearing and custody, and financial markets.
+          </p>
+
+          <p>
+            I have developed practical skills in bank reconciliation, AML/KYC customer screening, Excel-driven MIS reporting, and financial accounting. I completed the Goldman Sachs Operations Job Simulation and hold the CIBOP certification from Imarticus Learning, Delhi. Detail-oriented and accurate, I'm ready to contribute to operational workflows in a professional IB environment.
+          </p>
+
+          <div class="about-skills">
+            <span class="skill-tag">AML / KYC</span>
+            <span class="skill-tag">Trade Lifecycle</span>
+            <span class="skill-tag">Financial Markets & Products</span>
+            <span class="skill-tag">MS Excel (VLOOKUP, Pivot Tables)</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Bank Reconciliation</span>
+            <span class="skill-tag">MIS Reporting</span>
+            <span class="skill-tag">Goldman Sachs Operations Simulation</span>
+          </div>
+
+          <div class="about-info-grid">
+            <div class="info-item">
+              <div class="ii-icon">🎓</div>
+              <div>
+                <span class="ii-label">Education</span>
+                <span class="ii-value">M.Com (Finance) | B.Com</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="ii-icon">📍</div>
+              <div>
+                <span class="ii-label">Location</span>
+                <span class="ii-value">New Delhi, India</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="ii-icon">🎯</div>
+              <div>
+                <span class="ii-label">Target Role</span>
+                <span class="ii-value">IB Back Office Operations</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="ii-icon">📧</div>
+              <div>
+                <span class="ii-label">Email</span>
+                <span class="ii-value">yashsingh2542@gmail.com</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:28px;">
+            <a href="#contact" class="btn-primary" style="text-decoration:none;display:inline-flex;">
+              Get in Touch →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ================================================
+       SKILLS / EXPERTISE SECTION
+  ================================================= -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Technical Proficiency</div>
+        <h2 class="section-title">Skills & <span>Expertise</span></h2>
+        <p class="section-subtitle">A practical blend of accounting fundamentals, financial tools, and domain knowledge in IB operations.</p>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="skills-wrapper">
+        <!-- Core Skills -->
+        <div class="skills-group reveal-left">
+          <h3>📈 Core Financial Skills</h3>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span>AML / KYC — CDD, EDD, Sanctions Screening</span>
+              <span>Proficient</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="82"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span>Trade Lifecycle &amp; IB Back Office Operations</span>
+              <span>Knowledgeable</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="80"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span>Financial Markets &amp; Products</span>
+              <span>Knowledgeable</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="78"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span>Bank Reconciliation</span>
+              <span>Proficient</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="82"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span>MS Excel (VLOOKUP, Pivot Tables, MIS)</span>
+              <span>Proficient</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="88"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span>SQL — Data Querying &amp; Reporting</span>
+              <span>Intermediate</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="70"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span>Financial Accounting &amp; Tally ERP</span>
+              <span>Proficient</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="85"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools & Domain Knowledge -->
+        <div class="skills-group reveal-right">
+          <h3>🛠️ Tools & Domain Knowledge</h3>
+          <div class="tools-grid">
+
+            <!-- AML / KYC -->
+            <div class="tool-item">
+              <span class="tool-icon">
+                <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+                  <rect width="48" height="48" rx="6" fill="#1a1a2e"/>
+                  <circle cx="24" cy="18" r="8" fill="none" stroke="#00d4aa" stroke-width="2"/>
+                  <path d="M12 40 c0-8 24-8 24 0" fill="none" stroke="#00d4aa" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M32 24 l5 5 m0-5 l-5 5" stroke="#f4c542" stroke-width="2" stroke-linecap="round"/>
+                  <circle cx="37" cy="29" r="6" fill="none" stroke="#f4c542" stroke-width="1.5"/>
+                </svg>
+              </span>
+              <span class="tool-name">AML / KYC</span>
+            </div>
+
+            <!-- Trade Processing -->
+            <div class="tool-item">
+              <span class="tool-icon">
+                <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+                  <rect width="48" height="48" rx="6" fill="#1a1a2e"/>
+                  <path d="M10 24 L20 14 L28 22 L38 12" stroke="#00d4aa" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="10" cy="24" r="2.5" fill="#00d4aa"/>
+                  <circle cx="20" cy="14" r="2.5" fill="#00d4aa"/>
+                  <circle cx="28" cy="22" r="2.5" fill="#00d4aa"/>
+                  <circle cx="38" cy="12" r="2.5" fill="#00d4aa"/>
+                  <path d="M8 36 h32" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                  <path d="M34 28 l4-4 l4 4" stroke="#00d4aa" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  <path d="M38 24 v8" stroke="#00d4aa" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="tool-name">Trade Processing</span>
+            </div>
+
+            <!-- MS Excel -->
+            <div class="tool-item">
+              <span class="tool-icon">
+                <img src="logos/excel-svgrepo-com.svg" alt="MS Excel" width="36" height="36" />
+              </span>
+              <span class="tool-name">MS Excel</span>
+            </div>
+
+            <!-- MIS Reporting -->
+            <div class="tool-item">
+              <span class="tool-icon">
+                <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+                  <rect width="48" height="48" rx="6" fill="#1a1a2e"/>
+                  <rect x="9"  y="30" width="6" height="10" rx="1" fill="#00d4aa"/>
+                  <rect x="19" y="22" width="6" height="18" rx="1" fill="#00d4aa" opacity="0.8"/>
+                  <rect x="29" y="16" width="6" height="24" rx="1" fill="#00d4aa" opacity="0.6"/>
+                  <rect x="39" y="10" width="6" height="30" rx="1" fill="#00d4aa" opacity="0.4"/>
+                  <path d="M12 30 L22 22 L32 16 L42 10" stroke="#f4c542" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="3 2"/>
+                </svg>
+              </span>
+              <span class="tool-name">MIS Reporting</span>
+            </div>
+
+            <!-- SQL -->
+            <div class="tool-item">
+              <span class="tool-icon">
+                <img src="logos/sql-svgrepo-com.svg" alt="SQL" width="36" height="36" />
+              </span>
+              <span class="tool-name">SQL</span>
+            </div>
+
+            <!-- Tally ERP -->
+            <div class="tool-item">
+              <span class="tool-icon">
+                <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+                  <rect width="48" height="48" rx="8" fill="#0033A0"/>
+                  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="#fff" font-size="13" font-weight="800" font-family="Arial,sans-serif">TallyPrime</text>
+                </svg>
+              </span>
+              <span class="tool-name">Tally ERP</span>
+            </div>
+
+            <!-- MS Word -->
+            <div class="tool-item">
+              <span class="tool-icon">
+                <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+                  <rect width="48" height="48" rx="6" fill="#185ABD"/>
+                  <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#fff" font-size="22" font-weight="900" font-family="Calibri,Arial,sans-serif">W</text>
+                </svg>
+              </span>
+              <span class="tool-name">MS Word</span>
+            </div>
+
+            <!-- MS PowerPoint -->
+            <div class="tool-item">
+              <span class="tool-icon">
+                <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+                  <rect width="48" height="48" rx="6" fill="#C43E1C"/>
+                  <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#fff" font-size="22" font-weight="900" font-family="Calibri,Arial,sans-serif">P</text>
+                  <circle cx="30" cy="24" r="9" fill="#fff" opacity="0.15"/>
+                </svg>
+              </span>
+              <span class="tool-name">MS PowerPoint</span>
+            </div>
+
+          </div>
+
+          <div style="margin-top:28px;">
+            <h3 style="margin-bottom:14px; font-size:1rem;">🎯 Areas of Interest</h3>
+            <div class="interest-tags">
+              <span class="interest-tag">AML / KYC</span>
+              <span class="interest-tag">Trade Lifecycle</span>
+              <span class="interest-tag">Trade Processing</span>
+              <span class="interest-tag">Trade Settlements</span>
+              <span class="interest-tag">Reconciliation</span>
+              <span class="interest-tag">Clearing &amp; Custody</span>
+              <span class="interest-tag">Financial Markets &amp; Products</span>
+              <span class="interest-tag">IB Back Office Operations</span>
+              <span class="interest-tag">Corporate Actions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ================================================
+       SERVICES / WHAT I OFFER SECTION
+  ================================================= -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">What I Offer</div>
+        <h2 class="section-title">Operational <span>Capabilities</span></h2>
+        <p class="section-subtitle">Core competencies I bring to an Investment Banking Back Office or Finance Operations role.</p>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal delay-1">
+          <div class="service-icon">🔍</div>
+          <h3>AML / KYC Compliance</h3>
+          <p>Skilled in customer due diligence (CDD/EDD), sanctions screening against UN/OFAC lists, PEP checks, transaction monitoring, and drafting Suspicious Transaction Reports (STRs) with audit documentation.</p>
+        </div>
+
+        <div class="service-card reveal delay-2">
+          <div class="service-icon">🔄</div>
+          <h3>Trade Settlement Support</h3>
+          <p>Understanding of the trade lifecycle from execution to settlement. Capable of supporting trade confirmation, matching, and settlement processing in back office environments.</p>
+        </div>
+
+        <div class="service-card reveal delay-3">
+          <div class="service-icon">⚖️</div>
+          <h3>Reconciliation</h3>
+          <p>Hands-on experience in bank reconciliation — matching book balances with bank statements, tracing discrepancies like outstanding cheques and unrecorded entries to bring accounts into agreement.</p>
+        </div>
+
+        <div class="service-card reveal delay-1">
+          <div class="service-icon">📋</div>
+          <h3>MIS & Excel Reporting</h3>
+          <p>Converting raw transaction data into structured MIS-style summary reports using MS Excel functions including VLOOKUP, Pivot Tables, and formula-driven financial analysis.</p>
+        </div>
+
+        <div class="service-card reveal delay-2">
+          <div class="service-icon">📈</div>
+          <h3>Financial Markets & Products</h3>
+          <p>Knowledge of equity shares, debentures, bonds, mutual funds, and derivatives (futures, options, swaps). Understanding of capital market structure, primary/secondary markets, and product risk-return profiles.</p>
+        </div>
+
+        <div class="service-card reveal delay-3">
+          <div class="service-icon">💬</div>
+          <h3>Communication & Documentation</h3>
+          <p>Strong written and verbal communication in English. Capable of preparing clear operational reports, data summaries, and internal documentation for finance teams.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ================================================
+       TRAINING & ACADEMIC PROJECTS SECTION
+  ================================================= -->
+  <section id="training">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Practical Training</div>
+        <h2 class="section-title">Academic <span>Projects</span></h2>
+        <p class="section-subtitle">Hands-on practical training and academic projects that demonstrate real operational skills.</p>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="training-grid">
+
+        <div class="training-card reveal delay-1">
+          <div class="training-card-icon">🔍</div>
+          <h3>KYC/AML Customer Screening Project <span style="font-size:0.75rem; color:#00d4aa; font-weight:500;">(Excel)</span></h3>
+          <p>Conducted customer risk assessments applying CDD/EDD based on risk levels. Screened customers against UN/OFAC sanctions lists and PEP criteria, identifying true matches and false positives. Identified suspicious transaction patterns and drafted sample STRs with audit documentation.</p>
+          <div class="interest-tags" style="margin-top:14px;">
+            <span class="interest-tag">AML / KYC</span>
+            <span class="interest-tag">CDD / EDD</span>
+            <span class="interest-tag">Sanctions Screening</span>
+            <span class="interest-tag">PEP Checks</span>
+            <span class="interest-tag">STR Drafting</span>
+          </div>
+        </div>
+
+        <div class="training-card reveal delay-2">
+          <div class="training-card-icon">🏦</div>
+          <h3>Operations Job Simulation — Goldman Sachs <span style="font-size:0.75rem; color:#00d4aa; font-weight:500;">(Virtual Experience)</span></h3>
+          <p>Completed a virtual job simulation covering investment banking operations and back office workflows. Gained practical exposure to trade lifecycle management, transaction processing, and operational procedures used in IB environments.</p>
+          <div class="interest-tags" style="margin-top:14px;">
+            <span class="interest-tag">Goldman Sachs</span>
+            <span class="interest-tag">Trade Lifecycle</span>
+            <span class="interest-tag">Back Office Workflows</span>
+            <span class="interest-tag">Transaction Processing</span>
+          </div>
+        </div>
+
+        <div class="training-card reveal delay-3">
+          <div class="training-card-icon">🏦</div>
+          <h3>Bank Reconciliation Exercise</h3>
+          <p>Matched book balances against bank statements and traced discrepancies such as outstanding cheques and unrecorded entries to bring accounts into agreement — a core skill for IB back office operations.</p>
+          <div class="interest-tags" style="margin-top:14px;">
+            <span class="interest-tag">Bank Reconciliation</span>
+            <span class="interest-tag">Discrepancy Tracing</span>
+            <span class="interest-tag">Account Matching</span>
+          </div>
+        </div>
+
+        <div class="training-card reveal delay-1">
+          <div class="training-card-icon">📊</div>
+          <h3>MIS Reporting Project</h3>
+          <p>Converted raw transaction data into structured MIS-style summary reports using MS Excel (VLOOKUP and Pivot Tables) for coursework-based financial analysis, simulating real-world MIS reporting processes.</p>
+          <div class="interest-tags" style="margin-top:14px;">
+            <span class="interest-tag">VLOOKUP</span>
+            <span class="interest-tag">Pivot Tables</span>
+            <span class="interest-tag">MIS Reporting</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ================================================
+       EDUCATION SECTION
+  ================================================= -->
+  <section id="education">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Academic Background</div>
+        <h2 class="section-title">Education <span>Journey</span></h2>
+        <p class="section-subtitle">A strong academic foundation in Commerce and Finance.</p>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-period">2024 – 2026</div>
+            <h3>Master of Commerce (M.Com) — Finance</h3>
+            <div class="timeline-company">Siddharth University, Kapilvastu</div>
+            <ul>
+              <li>CGPA: 7.2</li>
+              <li>Specialisation in Finance</li>
+              <li>Coursework covering financial accounting, MIS reporting, and trade lifecycle fundamentals</li>
+              <li>Practical training in Tally ERP and Excel-driven financial analysis</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-period">2019 – 2022</div>
+            <h3>Bachelor of Commerce (B.Com)</h3>
+            <div class="timeline-company">University of Allahabad, Prayagraj</div>
+            <ul>
+              <li>Score: 88%</li>
+              <li>Comprehensive study of commerce, accounting, and business fundamentals</li>
+              <li>Strong foundation in financial principles and analytical reasoning</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ================================================
+       CERTIFICATIONS SECTION
+  ================================================= -->
+  <section id="certifications">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Credentials</div>
+        <h2 class="section-title">Certifications & <span>Qualifications</span></h2>
+        <p class="section-subtitle">Professional certifications that complement my academic background in finance.</p>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="cert-grid">
+
+        <div class="cert-card reveal delay-1">
+          <div class="cert-icon">🏅</div>
+          <h4>CIBOP — Certified IB Operations Professional</h4>
+          <div class="cert-org">Imarticus Learning, Delhi</div>
+          <div class="cert-year">Investment Banking Operations · Back Office</div>
+        </div>
+
+        <div class="cert-card reveal delay-2">
+          <div class="cert-icon">🏦</div>
+          <h4>Operations Job Simulation</h4>
+          <div class="cert-org">Goldman Sachs (Virtual Experience)</div>
+          <div class="cert-year">IB Operations · Back Office Workflows</div>
+        </div>
+
+        <div class="cert-card reveal delay-3">
+          <div class="cert-icon">
+            <img src="logos/analysis-seo-graph-svgrepo-com.svg" alt="Data Analysis" />
+          </div>
+          <h4>Data Analysis Using Excel</h4>
+          <div class="cert-org">Great Learning</div>
+          <div class="cert-year">Excel Analytics & MIS Reporting</div>
+        </div>
+
+        <div class="cert-card reveal delay-1">
+          <div class="cert-icon">🎓</div>
+          <h4>M.Com — Finance</h4>
+          <div class="cert-org">Siddharth University, Kapilvastu</div>
+          <div class="cert-year">2026 · CGPA: 7.2</div>
+        </div>
+
+        <div class="cert-card reveal delay-2">
+          <div class="cert-icon">🏛️</div>
+          <h4>B.Com</h4>
+          <div class="cert-org">University of Allahabad, Prayagraj</div>
+          <div class="cert-year">2022 · 88%</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ================================================
+       CONTACT SECTION
+  ================================================= -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Get in Touch</div>
+        <h2 class="section-title">Let's <span>Connect</span></h2>
+        <p class="section-subtitle">I'm actively seeking entry-level opportunities in IB Back Office Operations. Let's talk.</p>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-wrapper">
+        <!-- Contact Info -->
+        <div class="contact-info reveal-left">
+          <h3>Open to Opportunities in Finance & IB Operations</h3>
+          <p>Whether you're a recruiter, hiring manager, or someone interested in connecting — feel free to reach out. I'm detail-oriented, quick to learn, and ready to contribute to your team's operational workflows from day one.</p>
+
+          <div class="contact-details">
+            <a href="mailto:yashsingh2542@gmail.com?subject=Opportunity%20for%20Yash%20Singh%20Rawat" class="contact-detail-item contact-detail-link">
+              <div class="cd-icon">📧</div>
+              <div class="cd-text">
+                <span class="cd-label">Email</span>
+                <span class="cd-value">yashsingh2542@gmail.com</span>
+              </div>
+              <span class="cd-arrow">→</span>
+            </a>
+            <a href="tel:+916307019306" class="contact-detail-item contact-detail-link">
+              <div class="cd-icon">📞</div>
+              <div class="cd-text">
+                <span class="cd-label">Phone</span>
+                <span class="cd-value">+91 6307019306</span>
+              </div>
+              <span class="cd-arrow">→</span>
+            </a>
+            <div class="contact-detail-item">
+              <div class="cd-icon">📍</div>
+              <div class="cd-text">
+                <span class="cd-label">Location</span>
+                <span class="cd-value">New Delhi, India</span>
+              </div>
+            </div>
+            <a href="https://www.linkedin.com/in/yashsinghrawat" target="_blank" rel="noopener noreferrer" class="contact-detail-item contact-detail-link">
+              <div class="cd-icon">💼</div>
+              <div class="cd-text">
+                <span class="cd-label">LinkedIn</span>
+                <span class="cd-value" style="color:#00d4aa;">linkedin.com/in/yashsinghrawat</span>
+              </div>
+              <span class="cd-arrow">→</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Contact Form -->
+        <div class="reveal-right">
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name *</label>
+                <input type="text" id="fname" name="first_name" placeholder="Your first name" required />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name *</label>
+                <input type="text" id="lname" name="last_name" placeholder="Your last name" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 00000 00000" />
+            </div>
+
+            <div class="form-group">
+              <label for="service">Purpose</label>
+              <select id="service" name="service">
+                <option value="">Select a reason</option>
+                <option value="hiring">Job / Internship Opportunity</option>
+                <option value="collaboration">Collaboration</option>
+                <option value="referral">Referral</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Your Message *</label>
+              <textarea id="message" name="message" placeholder="Tell me about the opportunity or how I can help..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
+              Send Message →
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       FOOTER
+  ================================================= -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">YSR</div>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#training">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/yashsinghrawat?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">in</a>
+          <a href="mailto:yashsingh2542@gmail.com" class="social-link social-link-gmail" aria-label="Gmail">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true">
+              <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" fill="#EA4335"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Yash Singh Rawat · Finance & IB Operations · New Delhi, India</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+
+  <!-- 3D 360 Rotate – Profile Image -->
+  <script>
+    (function () {
+      const scene = document.getElementById('rotate3d-scene');
+      const obj   = document.getElementById('rotate3d-obj');
+      const hint  = document.getElementById('rotate3d-hint');
+      if (!scene || !obj) return;
+
+      let rotY = 0;      // current Y rotation (deg)
+      let rotX = 0;      // current X rotation (deg) — subtle tilt
+      let velY = 0;      // momentum velocity Y
+      let velX = 0;      // momentum velocity X
+      let isDragging = false;
+      let lastX = 0;
+      let lastY = 0;
+      let hintHidden = false;
+      let rafId = null;
+
+      /* ── Momentum loop ─────────────────────── */
+      function tick() {
+        if (!isDragging) {
+          velY *= 0.92;   // friction
+          velX *= 0.92;
+          rotY += velY;
+          rotX += velX;
+          // clamp X tilt so it doesn't flip upside-down
+          rotX = Math.max(-30, Math.min(30, rotX));
+        }
+        obj.style.transform = `rotateY(${rotY}deg) rotateX(${rotX}deg)`;
+        rafId = requestAnimationFrame(tick);
+      }
+      tick();
+
+      /* ── Hide hint after first interaction ─── */
+      function hideHint() {
+        if (!hintHidden) {
+          hintHidden = true;
+          hint.classList.add('hidden');
+        }
+      }
+
+      /* ── Pointer (mouse + touch) handlers ──── */
+      function onDragStart(x, y) {
+        isDragging = true;
+        lastX = x;
+        lastY = y;
+        velY = 0;
+        velX = 0;
+        hideHint();
+      }
+
+      function onDragMove(x, y) {
+        if (!isDragging) return;
+        const dx = x - lastX;
+        const dy = y - lastY;
+        velY = dx * 0.5;
+        velX = -dy * 0.25;
+        rotY += velY;
+        rotX += velX;
+        rotX = Math.max(-30, Math.min(30, rotX));
+        obj.style.transform = `rotateY(${rotY}deg) rotateX(${rotX}deg)`;
+        lastX = x;
+        lastY = y;
+      }
+
+      function onDragEnd() {
+        isDragging = false;
+      }
+
+      /* Mouse */
+      scene.addEventListener('mousedown', e => { e.preventDefault(); onDragStart(e.clientX, e.clientY); });
+      window.addEventListener('mousemove', e => onDragMove(e.clientX, e.clientY));
+      window.addEventListener('mouseup', onDragEnd);
+
+      /* Touch */
+      scene.addEventListener('touchstart', e => {
+        e.preventDefault();
+        const t = e.touches[0];
+        onDragStart(t.clientX, t.clientY);
+      }, { passive: false });
+      window.addEventListener('touchmove', e => {
+        const t = e.touches[0];
+        onDragMove(t.clientX, t.clientY);
+      }, { passive: true });
+      window.addEventListener('touchend', onDragEnd);
+
+      /* Slow auto-spin when idle */
+      let idleTimer = null;
+      function resetIdleSpin() {
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(() => {
+          if (!isDragging && Math.abs(velY) < 0.1) velY = 0.35;
+        }, 3000);
+      }
+      scene.addEventListener('mousedown', resetIdleSpin);
+      scene.addEventListener('touchstart', resetIdleSpin, { passive: true });
+      resetIdleSpin(); // start auto-spin initially after 3s idle
+    })();
+
+  </script>
+</body>
+</html>
